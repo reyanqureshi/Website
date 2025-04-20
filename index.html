@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reyan Qureshi - IT Support Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --light-bg: #f8f9fa;
+            --dark-text: #2d3748;
+            --light-text: #718096;
+            --highlight: #4cc9f0;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --border-radius: 10px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-text);
+        }
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(76, 201, 240, 0.1) 0%, rgba(67, 97, 238, 0.05) 100%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+            line-height: 1.2;
+        }
+        
+        .hero h1 span {
+            color: var(--primary);
+        }
+        
+        .hero h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: var(--light-text);
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .hero-link {
+            padding: 0.9rem 2rem;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .hero-link:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .outlined {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .outlined:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-header {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .card h4 {
+            font-size: 1rem;
+            color: var(--light-text);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .card h4 i {
+            color: var(--primary);
+        }
+        
+        .card-content {
+            flex: 1;
+        }
+        
+        .card ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .card ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tag {
+            background-color: rgba(67, 97, 238, 0.1);
+            color: var(--primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-card {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            height: 100%;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .skill-card h3 i {
+            color: var(--primary);
+        }
+        
+        .skill-card ul {
+            padding-left: 1.5rem;
+        }
+        
+        .skill-card ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 0 1rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 2px;
+            background-color: var(--primary);
+            left: calc(50% - 1px);
+            top: 0;
+        }
+        
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+            width: 50%;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 3rem;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 3rem;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--white);
+            border: 3px solid var(--primary);
+            top: 0;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+        
+        .contact-section {
+            background-color: var(--white);
+            padding: 5rem 2rem;
+        }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .contact-info h2 {
+            font-size: 2.5rem;
+            color: var(--dark-text);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info p {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(67, 97, 238, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+        
+        .contact-text h3 {
+            font-size: 1.2rem;
+            color: var(--dark-text);
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-text p {
+            font-size: 1rem;
+            color: var(--light-text);
+            margin: 0;
+        }
+        
+        .contact-form {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+        }
+        
+        .form-control {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-control input,
+        .form-control textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--border-radius);
+            background-color: #f7fafc;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-control input:focus,
+        .form-control textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        }
+        
+        .form-control textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 3rem 2rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        footer p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .timeline::before {
+                left: 0;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                left: 0;
+                padding-left: 2rem;
+            }
+            
+            .timeline-item:nth-child(odd) {
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: -10px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem 0;
+                box-shadow: var(--shadow);
+                transform: translateY(-150%);
+                transition: transform 0.3s;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+            }
+            
+            nav ul li {
+                margin: 1rem 0;
+            }
+            
+            .hero {
+                padding-top: 2rem;
+                height: auto;
+                min-height: 100vh;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">Reyan <span>Qureshi</span></a>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            <nav>
+                <ul id="menu">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Reyan A. <span>Qureshi</span></h1>
+        <h2>IT Support Specialist</h2>
+        <p>Certified IT professional with hands-on experience in system administration, technical support, and cloud technologies. Ready to deliver exceptional IT helpdesk support.</p>
+        <div class="hero-links">
+            <a href="#experience" class="hero-link"><i class="fas fa-laptop-code"></i> View Technical Skills</a>
+            <a href="#contact" class="hero-link outlined"><i class="fas fa-envelope"></i> Contact Me</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-header">
+            <h2>About Me</h2>
+            <p>Passionate IT support professional ready to solve your technical challenges</p>
+        </div>
+        <div class="card">
+            <p>I am an IT professional with a proven track record in technical support, system administration, and troubleshooting. My hands-on experience with both hardware and software systems makes me well-equipped to tackle a wide range of IT helpdesk challenges.</p>
+            <br>
+            <p>With extensive knowledge in Windows environments, Active Directory management, and cloud platforms like Microsoft Azure, I excel at diagnosing and resolving technical issues efficiently. I take pride in my ability to communicate complex technical concepts in user-friendly terms, ensuring that clients and team members understand the solutions I implement.</p>
+            <br>
+            <p>My technical foundation is backed by industry-recognized certifications including Microsoft AZ-900, CompTIA A+, and CompTIA Security+. I am committed to continuous learning to stay current with evolving technologies and security best practices. I'm eager to bring my technical expertise, problem-solving abilities, and customer service mindset to an IT helpdesk role where I can make immediate contributions to your team.</p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="section-header">
+            <h2>Professional Experience</h2>
+            <p>Building expertise through practical application</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Underwriting Technician</h3>
+                    <h4><i class="fas fa-building"></i> Berkley One - Chicago, IL</h4>
+                    <h4><i class="fas fa-calendar-alt"></i> Sept 2024–Present</h4>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li>Manage and maintain technical systems to ensure accurate data collection and processing for underwriting operations.</li>
+                        <li>Provide technical support to underwriters and clients, quickly resolving system issues to minimize downtime.</li>
+                        <li>Develop and implement standardized documentation and workflows, improving operational efficiency and data integrity.</li>
+                    </ul>
+                </div>
+                <div class="card-tags">
+                    <span class="tag">Technical Support</span>
+                    <span class="tag">Data Management</span>
+                    <span class="tag">Documentation</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3>Client Service Representative</h3>
+                    <h4><i class="fas fa-building"></i> Marsh McLennan Agency - Schaumburg, IL</h4>
+                    <h4><i class="fas fa-calendar-alt"></i> Sept 2023–Sept 2024</h4>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li>Administered and maintained agency management systems, ensuring data accuracy and system reliability for client operations.</li>
+                        <li>Provided first-level technical support to internal users, troubleshooting common software and connectivity issues.</li>
+                        <li>Collaborated with IT team to document and escalate complex technical problems, contributing to faster resolution times.</li>
+                    </ul>
+                </div>
+                <div class="card-tags">
+                    <span class="tag">System Administration</span>
+                    <span class="tag">User Support</span>
+                    <span class="tag">Problem Resolution</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-header">
+            <h2>Technical Projects</h2>
+            <p>Demonstrating hands-on IT skills and practical solutions</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Azure Web Deploy</h3>
+                    <h4><i class="fas fa-cloud"></i> Cloud Implementation</h4>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li>Developed and deployed a fully responsive website using JavaScript, CSS, and HTML, demonstrating front-end development skills.</li>
+                        <li>Implemented version control using GitHub, showcasing software development best practices and collaboration tools.</li>
+                        <li>Configured and deployed using Azure Static Web Apps, demonstrating cloud platform expertise and deployment workflows.</li>
+                        <li>Set up DNS configuration and SSL security, showing practical knowledge of web hosting and security protocols.</li>
+                    </ul>
+                </div>
+                <div class="card-tags">
+                    <span class="tag">Azure Cloud</span>
+                    <span class="tag">Web Deployment</span>
+                    <span class="tag">Version Control</span>
+                    <span class="tag">Network Security</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3>Domain Infrastructure and Security Setup</h3>
+                    <h4><i class="fas fa-server"></i> Enterprise Environment Simulation</h4>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li>Built and configured a domain controller with Active Directory for centralized user and resource management in a Windows environment.</li>
+                        <li>Deployed multiple Windows virtual machines joined to domain, showcasing virtualization and system administration skills.</li>
+                        <li>Implemented secure network file sharing with appropriate access controls based on security best practices.</li>
+                        <li>Created and deployed Group Policy Objects for automated software installation and system configuration management.</li>
+                    </ul>
+                </div>
+                <div class="card-tags">
+                    <span class="tag">Active Directory</span>
+                    <span class="tag">Windows Server</span>
+                    <span class="tag">Group Policy</span>
+                    <span class="tag">Network Security</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3>Computer Support Solutions</h3>
+                    <h4><i class="fas fa-laptop"></i> Hardware & Software Support</h4>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li>Built and configured custom desktop systems based on client requirements, demonstrating hardware expertise and component compatibility knowledge.</li>
+                        <li>Performed operating system installations, driver updates, and software configurations across diverse hardware environments.</li>
+                        <li>Provided end-user training and troubleshooting support, showing strong technical communication and customer service skills.</li>
+                        <li>Developed documentation for common issues and solutions to improve support efficiency and knowledge sharing.</li>
+                    </ul>
+                </div>
+                <div class="card-tags">
+                    <span class="tag">Hardware Troubleshooting</span>
+                    <span class="tag">OS Configuration</span>
+                    <span class="tag">Driver Management</span>
+                    <span class="tag">User Training</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-header">
+            <h2>Technical Skills</h2>
+            <p>Core competencies for effective IT support</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3><i class="fas fa-desktop"></i> Operating Systems</h3>
+                <ul>
+                    <li>Windows 10/11</li>
+                    <li>Windows Server 2016/2019</li>
+                    <li>macOS</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-network-wired"></i> Network & Security</h3>
+                <ul>
+                    <li>TCP/IP Configuration</li>
+                    <li>DNS Management</li>
+                    <li>Firewall Configuration</li>
+                    <li>VPN Setup</li>
+                    <li>Network Troubleshooting</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-server"></i> System Administration</h3>
+                <ul>
+                    <li>Active Directory</li>
+                    <li>Group Policy Management</li>
+                    <li>File Server Administration</li>
+                    <li>Windows Updates & Patch Management</li>
+                    <li>User Account Management</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-cloud"></i> Cloud Technologies</h3>
+                <ul>
+                    <li>Microsoft Azure</li>
+                    <li>Azure Active Directory</li>
+                    <li>Azure Static Web Apps</li>
+                    <li>Cloud Security Best Practices</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-tools"></i> Support Tools</h3>
+                <ul>
+                    <li>Remote Desktop Support</li>
+                    <li>Ticketing Systems</li>
+                    <li>System Monitoring Tools</li>
+                    <li>Backup & Recovery Solutions</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-certificate"></i> Certifications</h3>
+                <ul>
+                    <li>Microsoft AZ-900</li>
+                    <li>CompTIA A+</li>
+                    <li>CompTIA Security+</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="section-header">
+            <h2>Education</h2>
+            <p>Academic foundation in technology and business</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Illinois State University</h3>
+                    <h4><i class="fas fa-graduation-cap"></i> B.S. in Marketing</h4>
+                    <h4><i class="fas fa-map-marker-alt"></i> Normal, Illinois</h4>
+                </div>
+                <div class="card-content">
+                    <p>Combined business curriculum with technical electives focusing on information systems and data analytics. Developed strong communication skills and technical problem-solving abilities through project-based coursework.</p>
+                </div>
+                <div class="card-tags">
+                    <span class="tag">Data Analysis</span>
+                    <span class="tag">Technical Communication</span>
+                    <span class="tag">Project Management</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3>William Rainey Harper College</h3>
+                    <h4><i class="fas fa-graduation-cap"></i> A.A. in Marketing</h4>
