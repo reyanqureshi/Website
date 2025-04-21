@@ -579,6 +579,69 @@
             color: rgba(255, 255, 255, 0.7);
         }
         
+        #contact {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-card {
+            background-color: var(--light-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(67, 97, 238, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+        }
+        
+        .contact-card p, .contact-card a {
+            font-size: 1rem;
+            color: var(--light-text);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .contact-card a:hover {
+            color: var(--primary);
+        }
+        
         @media (max-width: 992px) {
             .contact-container {
                 grid-template-columns: 1fr;
@@ -862,50 +925,3 @@
                     <li>Azure Active Directory</li>
                     <li>Azure Static Web Apps</li>
                     <li>Cloud Security Best Practices</li>
-                </ul>
-            </div>
-            <div class="skill-card">
-                <h3><i class="fas fa-tools"></i> Support Tools</h3>
-                <ul>
-                    <li>Remote Desktop Support</li>
-                    <li>Ticketing Systems</li>
-                    <li>System Monitoring Tools</li>
-                    <li>Backup & Recovery Solutions</li>
-                </ul>
-            </div>
-            <div class="skill-card">
-                <h3><i class="fas fa-certificate"></i> Certifications</h3>
-                <ul>
-                    <li>Microsoft AZ-900</li>
-                    <li>CompTIA A+</li>
-                    <li>CompTIA Security+</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="education">
-        <div class="section-header">
-            <h2>Education</h2>
-            <p>Academic foundation in technology and business</p>
-        </div>
-        <div class="grid">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Illinois State University</h3>
-                    <h4><i class="fas fa-graduation-cap"></i> B.S. in Marketing</h4>
-                    <h4><i class="fas fa-map-marker-alt"></i> Normal, Illinois</h4>
-                </div>
-                <div class="card-content">
-                    <p>Combined business curriculum with technical electives focusing on information systems and data analytics. Developed strong communication skills and technical problem-solving abilities through project-based coursework.</p>
-                </div>
-                <div class="card-tags">
-                    <span class="tag">Data Analysis</span>
-                    <span class="tag">Technical Communication</span>
-                    <span class="tag">Project Management</span>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <h3>William Rainey Harper College</h3>
-                    <h4><i class="fas fa-graduation-cap"></i> A.A. in Marketing</h4>
