@@ -3,65 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reyan Qureshi - IT Support Professional</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Reyan Qureshi | IT Help Desk Professional</title>
     <style>
-        :root {
-            --primary: #4361ee;
-            --secondary: #3a0ca3;
-            --light-bg: #f8f9fa;
-            --dark-text: #2d3748;
-            --light-text: #718096;
-            --highlight: #4cc9f0;
-            --white: #ffffff;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            --border-radius: 10px;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        :root {
+            --primary-color: #2e80f2;
+            --primary-light: #e8f0fe;
+            --secondary-color: #2d3748;
+            --text-dark: #2d3748;
+            --text-light: #4a5568;
+            --background-light: #f8fafc;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
         }
         
         body {
-            background-color: var(--light-bg);
-            color: var(--dark-text);
-            line-height: 1.7;
-            overflow-x: hidden;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: #1a56db;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         header {
             background-color: var(--white);
             box-shadow: var(--shadow);
-            position: fixed;
-            width: 100%;
+            position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
         }
         
-        .header-container {
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 20px 0;
         }
         
         .logo {
-            font-size: 1.5rem;
+            font-size: 24px;
             font-weight: 700;
-            color: var(--secondary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo span {
-            color: var(--primary);
+            color: var(--primary-color);
         }
         
         nav ul {
@@ -70,16 +73,14 @@
         }
         
         nav ul li {
-            margin-left: 2rem;
+            margin-left: 30px;
         }
         
         nav ul li a {
-            text-decoration: none;
-            color: var(--dark-text);
+            color: var(--text-dark);
             font-weight: 500;
-            transition: all 0.3s;
-            padding: 0.5rem 0;
             position: relative;
+            padding-bottom: 5px;
         }
         
         nav ul li a::after {
@@ -89,839 +90,635 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--primary);
-            transition: width 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: var(--primary);
+            background-color: var(--primary-color);
+            transition: var(--transition);
         }
         
         nav ul li a:hover::after {
             width: 100%;
         }
         
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--dark-text);
-        }
-        
         .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 0 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-light), var(--white));
+            padding: 120px 0;
+            margin-bottom: 60px;
         }
         
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(76, 201, 240, 0.1) 0%, rgba(67, 97, 238, 0.05) 100%);
-            border-radius: 50%;
-            z-index: -1;
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark-text);
-            line-height: 1.2;
-        }
-        
-        .hero h1 span {
-            color: var(--primary);
+            font-size: 48px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
         }
         
         .hero h2 {
-            font-size: 1.8rem;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-            color: var(--light-text);
+            font-size: 24px;
+            color: var(--text-light);
+            font-weight: 500;
+            margin-bottom: 30px;
         }
         
-        .hero p {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
-        
-        .hero-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-        
-        .hero-link {
-            padding: 0.9rem 2rem;
-            background-color: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .hero-link:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .outlined {
-            background-color: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-        
-        .outlined:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        section {
-            padding: 6rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .section-header {
+        .section-title {
             text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark-text);
+            margin-bottom: 60px;
             position: relative;
-            display: inline-block;
         }
         
-        .section-header h2::after {
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background-color: var(--primary);
+            background-color: var(--primary-color);
         }
         
-        .section-header p {
-            font-size: 1.1rem;
-            color: var(--light-text);
-            max-width: 600px;
+        section {
+            padding: 80px 0;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 18px;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .grid-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .grid-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+        }
+        
+        .grid-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--primary-color);
+            z-index: 2;
+        }
+        
+        .grid-item-content {
+            padding: 30px;
+        }
+        
+        .grid-item h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        
+        .grid-item h4 {
+            font-size: 16px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .grid-item .date {
+            display: block;
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .grid-item ul {
+            margin-left: 20px;
+        }
+        
+        .grid-item li {
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+        
+        .skills-container {
+            max-width: 800px;
             margin: 0 auto;
         }
         
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        .skill-category {
+            margin-bottom: 40px;
         }
         
-        .card {
-            background-color: var(--white);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            transition: all 0.3s;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
+        .skill-category h3 {
+            font-size: 22px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
         }
         
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .card-header {
-            margin-bottom: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        
-        .card h3 {
-            font-size: 1.5rem;
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .card h4 {
-            font-size: 1rem;
-            color: var(--light-text);
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .card h4 i {
-            color: var(--primary);
-        }
-        
-        .card-content {
-            flex: 1;
-        }
-        
-        .card ul {
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .card ul li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .card-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        
-        .tag {
-            background-color: rgba(67, 97, 238, 0.1);
-            color: var(--primary);
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        
-        .skills-grid {
+        .skill-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 20px;
         }
         
-        .skill-card {
+        .skill-box {
             background-color: var(--white);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
+            padding: 20px;
+            border-radius: 8px;
             box-shadow: var(--shadow);
-            transition: all 0.3s;
-            height: 100%;
-            border-left: 4px solid var(--primary);
+            transition: var(--transition);
+            text-align: center;
         }
         
-        .skill-card:hover {
+        .skill-box:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .skill-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: var(--secondary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .skill-card h3 i {
-            color: var(--primary);
-        }
-        
-        .skill-card ul {
-            padding-left: 1.5rem;
-        }
-        
-        .skill-card ul li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .timeline {
-            position: relative;
-            padding: 0 1rem;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 2px;
-            background-color: var(--primary);
-            left: calc(50% - 1px);
-            top: 0;
-        }
-        
-        .timeline-item {
-            margin-bottom: 3rem;
-            position: relative;
-            width: 50%;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            left: 0;
-            padding-right: 3rem;
-        }
-        
-        .timeline-item:nth-child(even) {
-            left: 50%;
-            padding-left: 3rem;
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: var(--white);
-            border: 3px solid var(--primary);
-            top: 0;
-        }
-        
-        .timeline-item:nth-child(odd)::after {
-            right: -10px;
-        }
-        
-        .timeline-item:nth-child(even)::after {
-            left: -10px;
-        }
-        
-        .contact-section {
-            background-color: var(--white);
-            padding: 5rem 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+            background-color: var(--primary-color);
+            color: var(--white);
         }
         
         .contact-container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-        
-        .contact-info h2 {
-            font-size: 2.5rem;
-            color: var(--dark-text);
-            margin-bottom: 1rem;
-        }
-        
-        .contact-info p {
-            font-size: 1.1rem;
-            color: var(--light-text);
-            margin-bottom: 2rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background-color: rgba(67, 97, 238, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 1.3rem;
-        }
-        
-        .contact-text h3 {
-            font-size: 1.2rem;
-            color: var(--dark-text);
-            margin-bottom: 0.3rem;
-        }
-        
-        .contact-text p {
-            font-size: 1rem;
-            color: var(--light-text);
-            margin: 0;
-        }
-        
-        .contact-form {
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            padding: 2rem;
-        }
-        
-        .form-control {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-control input,
-        .form-control textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid #e2e8f0;
-            border-radius: var(--border-radius);
-            background-color: #f7fafc;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-        
-        .form-control input:focus,
-        .form-control textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
-        }
-        
-        .form-control textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            justify-content: center;
-            width: 100%;
-        }
-        
-        .submit-btn:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        footer {
-            background-color: var(--secondary);
-            color: white;
-            padding: 3rem 2rem;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: white;
-        }
-        
-        footer p {
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        
-        .social-link:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        #contact {
-            padding: 6rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
         }
         
         .contact-card {
-            background-color: var(--light-bg);
-            padding: 2rem;
-            border-radius: var(--border-radius);
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
             box-shadow: var(--shadow);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
-            transition: all 0.3s;
+            transition: var(--transition);
         }
         
         .contact-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
         }
         
         .contact-icon {
-            width: 60px;
-            height: 60px;
-            background-color: rgba(67, 97, 238, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
         }
         
-        .contact-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--dark-text);
+        .contact-label {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-dark);
         }
         
-        .contact-card p, .contact-card a {
-            font-size: 1rem;
-            color: var(--light-text);
-            text-decoration: none;
-            transition: all 0.3s;
+        .contact-value {
+            color: var(--text-light);
         }
         
-        .contact-card a:hover {
-            color: var(--primary);
+        .highlights-container {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
         }
         
-        @media (max-width: 992px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            
-            .timeline::before {
-                left: 0;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                left: 0;
-                padding-left: 2rem;
-            }
-            
-            .timeline-item:nth-child(odd) {
-                padding-right: 0;
-            }
-            
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-            
-            .timeline-item::after {
-                left: -10px;
-            }
+        .highlight-card {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
         }
         
+        .highlight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+            background-color: var(--primary-light);
+        }
+        
+        .highlight-icon {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .highlight-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+        
+        .highlight-description {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--primary-light);
+        }
+        
+        footer a:hover {
+            color: var(--white);
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #a0aec0;
+        }
+        
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #1a56db;
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(45, 55, 72, 0.15);
+        }
+        
+        /* Responsive styles */
         @media (max-width: 768px) {
-            .header-container {
-                padding: 1rem;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
+            .header-content {
+                flex-direction: column;
             }
             
             nav ul {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background-color: var(--white);
-                flex-direction: column;
-                align-items: center;
-                padding: 1rem 0;
-                box-shadow: var(--shadow);
-                transform: translateY(-150%);
-                transition: transform 0.3s;
-                z-index: 999;
-            }
-            
-            nav ul.active {
-                transform: translateY(0);
+                margin-top: 20px;
+                justify-content: center;
             }
             
             nav ul li {
-                margin: 1rem 0;
+                margin: 0 10px;
             }
             
             .hero {
-                padding-top: 2rem;
-                height: auto;
-                min-height: 100vh;
+                padding: 80px 0;
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 36px;
             }
             
             .hero h2 {
-                font-size: 1.5rem;
+                font-size: 20px;
             }
             
-            .section-header h2 {
-                font-size: 2rem;
-            }
-            
-            .grid {
+            .grid-container {
                 grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <a href="#" class="logo">Reyan <span>Qureshi</span></a>
-            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
-            <nav>
-                <ul id="menu">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">RQ</div>
+                <nav>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#highlights">IT Highlights</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#projects">Technical Projects</a></li>
+                        <li><a href="#skills">Technical Skills</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
     <section class="hero">
-        <h1>Reyan A. <span>Qureshi</span></h1>
-        <h2>IT Support Specialist</h2>
-        <p>Certified IT professional with hands-on experience in system administration, technical support, and cloud technologies. Ready to deliver exceptional IT helpdesk support.</p>
-        <div class="hero-links">
-            <a href="#experience" class="hero-link"><i class="fas fa-laptop-code"></i> View Technical Skills</a>
-            <a href="#contact" class="hero-link outlined"><i class="fas fa-envelope"></i> Contact Me</a>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Reyan A. Qureshi</h1>
+                <h2>IT Help Desk Specialist & System Administrator</h2>
+            </div>
         </div>
     </section>
 
     <section id="about">
-        <div class="section-header">
-            <h2>About Me</h2>
-            <p>Passionate IT support professional ready to solve your technical challenges</p>
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <p>Passionate IT support professional ready to solve your technical challenges</p>
+                <p>I am an IT professional with a proven track record in technical support, system administration, and troubleshooting. My hands-on experience with both hardware and software systems makes me well-equipped to tackle a wide range of IT helpdesk challenges.</p>
+                <p>With extensive knowledge in Windows environments, Active Directory management, and cloud platforms like Microsoft Azure, I excel at diagnosing and resolving technical issues efficiently. I take pride in my ability to communicate complex technical concepts in user-friendly terms, ensuring that clients and team members understand the solutions I implement.</p>
+                <p>My technical foundation is backed by industry-recognized certifications including Microsoft AZ-900, CompTIA A+, and CompTIA Security+. I am committed to continuous learning to stay current with evolving technologies and security best practices. I'm eager to bring my technical expertise, problem-solving abilities, and customer service mindset to an IT helpdesk role where I can make immediate contributions to your team.</p>
+            </div>
         </div>
-        <div class="card">
-            <p>I am an IT professional with a proven track record in technical support, system administration, and troubleshooting. My hands-on experience with both hardware and software systems makes me well-equipped to tackle a wide range of IT helpdesk challenges.</p>
-            <br>
-            <p>With extensive knowledge in Windows environments, Active Directory management, and cloud platforms like Microsoft Azure, I excel at diagnosing and resolving technical issues efficiently. I take pride in my ability to communicate complex technical concepts in user-friendly terms, ensuring that clients and team members understand the solutions I implement.</p>
-            <br>
-            <p>My technical foundation is backed by industry-recognized certifications including Microsoft AZ-900, CompTIA A+, and CompTIA Security+. I am committed to continuous learning to stay current with evolving technologies and security best practices. I'm eager to bring my technical expertise, problem-solving abilities, and customer service mindset to an IT helpdesk role where I can make immediate contributions to your team.</p>
+    </section>
+
+    <section id="highlights">
+        <div class="container">
+            <div class="section-title">
+                <h2>IT Support Highlights</h2>
+            </div>
+            <div class="highlights-container">
+                <div class="highlight-card">
+                    <div class="highlight-icon">🖥️</div>
+                    <div class="highlight-title">Hardware Expertise</div>
+                    <div class="highlight-description">Extensive experience assembling, configuring, and troubleshooting desktop PCs, peripherals, and network equipment.</div>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-icon">🔒</div>
+                    <div class="highlight-title">System Security</div>
+                    <div class="highlight-description">Implementation of security best practices, access controls, and user permissions across enterprise systems.</div>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-icon">🌐</div>
+                    <div class="highlight-title">Active Directory</div>
+                    <div class="highlight-description">Proficient in user management, group policies, and domain administration in Windows environments.</div>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-icon">📊</div>
+                    <div class="highlight-title">Documentation</div>
+                    <div class="highlight-description">Creation of clear technical documentation, knowledge base articles, and standard operating procedures.</div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="experience">
-        <div class="section-header">
-            <h2>Professional Experience</h2>
-            <p>Building expertise through practical application</p>
-        </div>
-        <div class="grid">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Underwriting Technician</h3>
-                    <h4><i class="fas fa-building"></i> Berkley One - Chicago, IL</h4>
-                    <h4><i class="fas fa-calendar-alt"></i> Sept 2024–Present</h4>
-                </div>
-                <div class="card-content">
-                    <ul>
-                        <li>Manage and maintain technical systems to ensure accurate data collection and processing for underwriting operations.</li>
-                        <li>Provide technical support to underwriters and clients, quickly resolving system issues to minimize downtime.</li>
-                        <li>Develop and implement standardized documentation and workflows, improving operational efficiency and data integrity.</li>
-                    </ul>
-                </div>
-                <div class="card-tags">
-                    <span class="tag">Technical Support</span>
-                    <span class="tag">Data Management</span>
-                    <span class="tag">Documentation</span>
-                </div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <h3>Client Service Representative</h3>
-                    <h4><i class="fas fa-building"></i> Marsh McLennan Agency - Schaumburg, IL</h4>
-                    <h4><i class="fas fa-calendar-alt"></i> Sept 2023–Sept 2024</h4>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <div class="grid-item-content">
+                        <h3>Underwriting Technician</h3>
+                        <h4>Berkley One</h4>
+                        <span class="date">September 2024 - Present | Chicago, Illinois</span>
+                        <ul>
+                            <li>Manage technical aspects of underwriting systems, troubleshooting access issues and providing training to end users.</li>
+                            <li>Create standardized documentation and process workflows to improve system usability and efficiency.</li>
+                            <li>Apply IT knowledge to streamline data collection and improve information accuracy across underwriting platforms.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <ul>
-                        <li>Administered and maintained agency management systems, ensuring data accuracy and system reliability for client operations.</li>
-                        <li>Provided first-level technical support to internal users, troubleshooting common software and connectivity issues.</li>
-                        <li>Collaborated with IT team to document and escalate complex technical problems, contributing to faster resolution times.</li>
-                    </ul>
+                
+                <div class="grid-item">
+                    <div class="grid-item-content">
+                        <h3>Client Service Representative</h3>
+                        <h4>Marsh McLennan Agency</h4>
+                        <span class="date">September 2023 - September 2024 | Schaumburg, Illinois</span>
+                        <ul>
+                            <li>Provided first-level technical support for agency management systems, resolving user access and functionality issues.</li>
+                            <li>Trained team members on system features and best practices to improve productivity and data accuracy.</li>
+                            <li>Maintained comprehensive documentation of technical processes and system workflows to ensure consistent service delivery.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card-tags">
-                    <span class="tag">System Administration</span>
-                    <span class="tag">User Support</span>
-                    <span class="tag">Problem Resolution</span>
+                
+                <div class="grid-item">
+                    <div class="grid-item-content">
+                        <h3>Technical Support Specialist</h3>
+                        <h4>Computer Support Projects</h4>
+                        <span class="date">Ongoing</span>
+                        <ul>
+                            <li>Provided comprehensive IT support services including hardware troubleshooting, software installation, and system optimization.</li>
+                            <li>Assembled and configured custom desktop systems based on client requirements and budget constraints.</li>
+                            <li>Performed system maintenance, driver updates, and security configurations to ensure optimal performance and protection.</li>
+                            <li>Educated users on best practices for system maintenance, security awareness, and troubleshooting common issues.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="projects">
-        <div class="section-header">
-            <h2>Technical Projects</h2>
-            <p>Demonstrating hands-on IT skills and practical solutions</p>
-        </div>
-        <div class="grid">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Azure Web Deploy</h3>
-                    <h4><i class="fas fa-cloud"></i> Cloud Implementation</h4>
-                </div>
-                <div class="card-content">
-                    <ul>
-                        <li>Developed and deployed a fully responsive website using JavaScript, CSS, and HTML, demonstrating front-end development skills.</li>
-                        <li>Implemented version control using GitHub, showcasing software development best practices and collaboration tools.</li>
-                        <li>Configured and deployed using Azure Static Web Apps, demonstrating cloud platform expertise and deployment workflows.</li>
-                        <li>Set up DNS configuration and SSL security, showing practical knowledge of web hosting and security protocols.</li>
-                    </ul>
-                </div>
-                <div class="card-tags">
-                    <span class="tag">Azure Cloud</span>
-                    <span class="tag">Web Deployment</span>
-                    <span class="tag">Version Control</span>
-                    <span class="tag">Network Security</span>
-                </div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Projects</h2>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <h3>Domain Infrastructure and Security Setup</h3>
-                    <h4><i class="fas fa-server"></i> Enterprise Environment Simulation</h4>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <div class="grid-item-content">
+                        <h3>Help Desk Knowledge Base Development</h3>
+                        <ul>
+                            <li>Created comprehensive documentation of common technical issues and their resolutions to expedite support delivery.</li>
+                            <li>Developed step-by-step guides for system processes, including screenshots and troubleshooting flowcharts.</li>
+                            <li>Implemented standardized templates for technical documentation to ensure consistency across support resources.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <ul>
-                        <li>Built and configured a domain controller with Active Directory for centralized user and resource management in a Windows environment.</li>
-                        <li>Deployed multiple Windows virtual machines joined to domain, showcasing virtualization and system administration skills.</li>
-                        <li>Implemented secure network file sharing with appropriate access controls based on security best practices.</li>
-                        <li>Created and deployed Group Policy Objects for automated software installation and system configuration management.</li>
-                    </ul>
+
+                <div class="grid-item">
+                    <div class="grid-item-content">
+                        <h3>Domain Infrastructure and Security Setup</h3>
+                        <ul>
+                            <li>Established a domain controller and Active Directory to manage over 10 virtual users and groups, enabling centralized user management and permission control.</li>
+                            <li>Deployed and configured multiple Windows virtual machines, streamlining administration by joining them to the domain for centralized management and policy enforcement.</li>
+                            <li>Set up a secure network file share, leveraging Active Directory group policies to control access and improve data security, reducing unauthorized access incidents.</li>
+                            <li>Implemented Group Policy Objects (GPOs) for software installation and system configuration, reducing configuration errors and standardizing desktop environments across all VMs.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card-tags">
-                    <span class="tag">Active Directory</span>
-                    <span class="tag">Windows Server</span>
-                    <span class="tag">Group Policy</span>
-                    <span class="tag">Network Security</span>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <h3>Computer Support Solutions</h3>
-                    <h4><i class="fas fa-laptop"></i> Hardware & Software Support</h4>
-                </div>
-                <div class="card-content">
-                    <ul>
-                        <li>Built and configured custom desktop systems based on client requirements, demonstrating hardware expertise and component compatibility knowledge.</li>
-                        <li>Performed operating system installations, driver updates, and software configurations across diverse hardware environments.</li>
-                        <li>Provided end-user training and troubleshooting support, showing strong technical communication and customer service skills.</li>
-                        <li>Developed documentation for common issues and solutions to improve support efficiency and knowledge sharing.</li>
-                    </ul>
-                </div>
-                <div class="card-tags">
-                    <span class="tag">Hardware Troubleshooting</span>
-                    <span class="tag">OS Configuration</span>
-                    <span class="tag">Driver Management</span>
-                    <span class="tag">User Training</span>
+
+                <div class="grid-item">
+                    <div class="grid-item-content">
+                        <h3>Azure Web Deploy</h3>
+                        <ul>
+                            <li>Developed and deployed a fully responsive resume website using JavaScript, CSS, and HTML, improving the site's mobile accessibility and user experience.</li>
+                            <li>Managed version control through GitHub: Added the website to GitHub repositories for version control and collaborative development.</li>
+                            <li>Configured Azure Static Web App: Configured and deployed the site using Azure Static Web Apps, enabling fast, scalable, and secure hosting with minimal maintenance.</li>
+                            <li>Changed DNS settings and added a custom domain: Updated DNS settings to link a custom domain and enabled HTTPS, improving security and user trust through SSL encryption.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="skills">
-        <div class="section-header">
-            <h2>Technical Skills</h2>
-            <p>Core competencies for effective IT support</p>
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Skills</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Help Desk Support</h3>
+                    <div class="skill-grid">
+                        <div class="skill-box">Hardware Troubleshooting</div>
+                        <div class="skill-box">Desktop Support</div>
+                        <div class="skill-box">Network Diagnostics</div>
+                        <div class="skill-box">User Training</div>
+                        <div class="skill-box">Technical Documentation</div>
+                        <div class="skill-box">System Imaging</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>System Administration</h3>
+                    <div class="skill-grid">
+                        <div class="skill-box">Active Directory</div>
+                        <div class="skill-box">Group Policy Management</div>
+                        <div class="skill-box">Windows Servers</div>
+                        <div class="skill-box">Linux</div>
+                        <div class="skill-box">User Account Management</div>
+                        <div class="skill-box">Network File Sharing</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Technical Environment</h3>
+                    <div class="skill-grid">
+                        <div class="skill-box">Windows OS (7/10/11)</div>
+                        <div class="skill-box">Microsoft Office Suite</div>
+                        <div class="skill-box">Microsoft Azure</div>
+                        <div class="skill-box">Virtual Machines</div>
+                        <div class="skill-box">Remote Desktop Support</div>
+                        <div class="skill-box">DNS Management</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Certifications</h3>
+                    <div class="skill-grid">
+                        <div class="skill-box">Microsoft AZ-900</div>
+                        <div class="skill-box">CompTIA A+</div>
+                        <div class="skill-box">CompTIA Security+</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3><i class="fas fa-desktop"></i> Operating Systems</h3>
-                <ul>
-                    <li>Windows 10/11</li>
-                    <li>Windows Server 2016/2019</li>
-                    <li>macOS</li>
-                </ul>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education</h2>
             </div>
-            <div class="skill-card">
-                <h3><i class="fas fa-network-wired"></i> Network & Security</h3>
-                <ul>
-                    <li>TCP/IP Configuration</li>
-                    <li>DNS Management</li>
-                    <li>Firewall Configuration</li>
-                    <li>VPN Setup</li>
-                    <li>Network Troubleshooting</li>
-                </ul>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <div class="grid-item-content">
+                        <h3>Illinois State University</h3>
+                        <h4>B.S. in Marketing</h4>
+                        <span class="date">Normal, Illinois</span>
+                        <p style="margin-top: 10px; color: var(--text-light);">Coursework included business technology applications and data analysis techniques.</p>
+                    </div>
+                </div>
+                
+                <div class="grid-item">
+                    <div class="grid-item-content">
+                        <h3>William Rainey Harper College</h3>
+                        <h4>B.S. in Marketing/IT</h4>
+                        <span class="date">Illinois</span>
+                        <p style="margin-top: 10px; color: var(--text-light);">Focus on information technology applications in business environments, including system administration and technical support fundamentals.</p>
+                    </div>
+                </div>
             </div>
-            <div class="skill-card">
-                <h3><i class="fas fa-server"></i> System Administration</h3>
-                <ul>
-                    <li>Active Directory</li>
-                    <li>Group Policy Management</li>
-                    <li>File Server Administration</li>
-                    <li>Windows Updates & Patch Management</li>
-                    <li>User Account Management</li>
-                </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Information</h2>
             </div>
-            <div class="skill-card">
-                <h3><i class="fas fa-cloud"></i> Cloud Technologies</h3>
-                <ul>
-                    <li>Microsoft Azure</li>
-                    <li>Azure Active Directory</li>
-                    <li>Azure Static Web Apps</li>
-                    <li>Cloud Security Best Practices</li>
+            <div class="contact-container">
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">
+                        <a href="mailto:reyanqureshi@hotmail.com">reyanqureshi@hotmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-label">Phone</div>
+                    <div class="contact-value">(847)-809-7728</div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">💼</div>
+                    <div class="contact-label">LinkedIn</div>
+                    <div class="contact-value">
+                        <a href="https://linkedin.com/in/reyan-qureshi" target="_blank">Reyan Qureshi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <nav>
+                <ul style="justify-content: center; margin-bottom: 20px;">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#highlights">IT Highlights</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">&copy; 2025 Reyan A. Qureshi. All rights reserved.</div>
+        </div>
+    </footer>
+</body>
+</html>
